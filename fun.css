@@ -1,0 +1,172 @@
+body{
+    background-color: rgb(207, 207, 118);
+}
+.foundation{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.content{
+    position: relative;
+    background-color: rgb(31, 5, 31);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-left:30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 38px;
+    box-sizing: border-box;
+    padding-top: 100px;
+}
+.content::before{
+    content: "";
+    position: absolute;
+    top: 169px;
+    left: 50%;
+    width: 18px;
+    height: 16px;
+    border-bottom: 4px solid rgb(79, 14, 14);
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+.content::after{
+    content: "";
+    position: absolute;
+    top: 218px;
+    left: 50%;
+    width: 62px;
+    height: 20px;
+    border-bottom: 5px solid rgb(79, 14, 14);
+    border-radius: 0 0 50% 50%;
+    transform: translateX(-50%);
+    animation: mouth-move 1s ease-in-out infinite alternate;
+}
+.white-part1,
+.white-part2{
+    position: relative;
+    background-color: white;
+    width: 68px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    animation: eye-blink 15s infinite;
+}
+.white-part1::before,
+.white-part2::before{
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 1px;
+    width: 66px;
+    height: 13px;
+    background: repeating-linear-gradient(110deg, transparent 0 8px, rgb(31, 5, 31) 8px 10px);
+}
+.white-part1::after,
+.white-part2::after{
+    content: "";
+    position: absolute;
+    top: -27px;
+    width: 52px;
+    height: 8px;
+    background-color: rgb(31, 5, 31);
+    border-radius: 50%;
+}
+.white-part1::after{
+    transform: rotate(8deg);
+}
+.white-part2::after{
+    transform: rotate(-8deg);
+}
+.black-part1,
+.black-part2{
+    background-color: rgb(79, 14, 14);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation: eye-look 15s ease-in-out infinite;
+}
+.blush{
+    position: absolute;
+    top: 185px;
+    width: 56px;
+    height: 34px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(239, 92, 110, 0.6), rgba(239, 92, 110, 0.3) 42%, transparent 75%);
+    opacity: 0;
+    animation: cheeks-blush 15s ease-in-out infinite;
+    pointer-events: none;
+}
+.blush-left{
+    left: 36px;
+}
+.blush-right{
+    right: 36px;
+}
+@keyframes eye-blink{
+    0%, 43%, 55%, 71%, 73%, 88%, 90%, 100%{
+        transform: scaleY(1);
+    }
+    45%, 53%{
+        transform: scaleY(0.08);
+    }
+}
+@keyframes eye-look{
+    0%, 19%, 41%, 100%{
+        transform: translateX(0);
+    }
+    22%, 38%{
+        transform: translateX(10px);
+    }
+}
+@keyframes cheeks-blush{
+    0%, 42%, 57%, 100%{
+        opacity: 0;
+    }
+    46%, 52%{
+        opacity: 1;
+    }
+}
+@keyframes mouth-move{
+    from{
+        height: 7px;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    to{
+        height: 24px;
+        background-color: rgb(79, 14, 14);
+        border-radius: 0 0 50% 50%;
+        box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.75);
+    }
+}
+@media (prefers-reduced-motion: reduce){
+    .white-part1,
+    .white-part2,
+    .black-part1,
+    .black-part2,
+    .blush,
+    .content::after{
+        animation: none;
+    }
+}
+.writeup1-body{
+    background-color: rgb(253, 253, 226);
+     border-radius: 30px;
+     padding: 25px 25px 25px 25px;
+}
+.writeup1{
+    color: rgb(90, 72, 13);
+    font-size: 20px;
+    
+}
+#getStarted{
+    background-color: rgb(31, 5, 31);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 5px 5px 5px;
+}
